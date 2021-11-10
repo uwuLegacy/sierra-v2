@@ -1,12 +1,12 @@
+import { LogLevel } from '@ogma/common';
 import { ClientOptions } from 'discord.js';
-import { OgmaLogger } from '@ogma/nestjs-module';
 
 export interface ClientConfig extends ClientOptions {}
 
 export interface EnvironmentConfig {
     development: boolean;
     version: string;
-    logLevel: ;
+    logLevel: keyof typeof LogLevel;
 }
 
 export interface ISierraConfig {
