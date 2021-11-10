@@ -1,7 +1,6 @@
 {
     "version": 2,
     "projects": {
-        "client": "libs/client",
         "config": "libs/config",
         "framework": "apps/framework",
         "workspace": {

@@ -4,7 +4,7 @@ import { ClientOptions } from 'discord.js';
 export interface ClientConfig extends ClientOptions {}
 
 export interface EnvironmentConfig {
-    development: boolean;
+    dev: boolean;
     version: string;
     logLevel: keyof typeof LogLevel;
 }

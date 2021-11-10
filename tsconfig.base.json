@@ -15,7 +15,6 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@sierra/client": ["libs/client/src/index.ts"],
             "@sierra/config": ["libs/config/src/index.ts"]
         }
     },

@@ -10,7 +10,7 @@ export const config: ISierraConfig = {
     owners: ['392264789360902156'],
 
     environment: {
-        development: is_devenv,
+        dev: is_devenv,
         version,
         logLevel: is_devenv ? 'INFO' : 'DEBUG',
     },
