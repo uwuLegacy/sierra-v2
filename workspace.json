@@ -1,6 +1,19 @@
 {
-  "version": 2,
-  "projects": {
-    "framework": "apps/framework"
-  }
+    "version": 2,
+    "projects": {
+        "client": "libs/client",
+        "config": "libs/config",
+        "framework": "apps/framework",
+        "workspace": {
+            "root": ".",
+            "targets": {
+                "version": {
+                    "executor": "@jscutlery/semver:version",
+                    "options": {
+                        "syncVersions": true
+                    }
+                }
+            }
+        }
+    }
 }
