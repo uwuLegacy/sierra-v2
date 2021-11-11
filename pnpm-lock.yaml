@@ -46,6 +46,7 @@ specifiers:
   express: ^4.17.1
   husky: ^7.0.4
   jest: 27.3.1
+  lexure: ^0.17.0
   prettier: ^2.4.1
   prisma: ^3.4.2
   reflect-metadata: ^0.1.13
@@ -77,6 +78,7 @@ dependencies:
   '@sapphire/utilities': 3.0.7
   discord.js: 13.3.1
   express: 4.17.1
+  lexure: 0.17.0
   reflect-metadata: 0.1.13
   rxjs: 7.4.0
   tslib: 2.3.1

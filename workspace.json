@@ -24,29 +24,6 @@
             },
             "tags": []
         },
-        "client2": {
-            "root": "libs/client2",
-            "sourceRoot": "libs/client2/src",
-            "projectType": "library",
-            "targets": {
-                "lint": {
-                    "executor": "@nrwl/linter:eslint",
-                    "outputs": ["{options.outputFile}"],
-                    "options": {
-                        "lintFilePatterns": ["libs/client2/**/*.ts"]
-                    }
-                },
-                "test": {
-                    "executor": "@nrwl/jest:jest",
-                    "outputs": ["coverage/libs/client2"],
-                    "options": {
-                        "jestConfig": "libs/client2/jest.config.js",
-                        "passWithNoTests": true
-                    }
-                }
-            },
-            "tags": []
-        },
         "config": "libs/config",
         "framework": "apps/framework",
         "prisma": {
