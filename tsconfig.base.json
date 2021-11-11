@@ -15,7 +15,8 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@sierra/config": ["libs/config/src/index.ts"]
+            "@sierra/config": ["libs/config/src/index.ts"],
+            "@sierra/prisma": ["libs/prisma/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

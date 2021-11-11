@@ -12,7 +12,7 @@ export class OgmaModuleConfig
     createModuleConfig(): OgmaModuleOptions {
         return {
             service: {
-                logLevel: this.configService.get('environment.logLevel'),
+                logLevel: 'ALL',
                 color: true,
                 application: this.configService.get('application'),
             },

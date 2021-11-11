@@ -1,7 +1,9 @@
 import { LogLevel } from '@ogma/common';
 import { ClientOptions } from 'discord.js';
 
-export interface ClientConfig extends ClientOptions {}
+export interface ClientConfig extends ClientOptions {
+    token: string;
+}
 
 export interface EnvironmentConfig {
     dev: boolean;

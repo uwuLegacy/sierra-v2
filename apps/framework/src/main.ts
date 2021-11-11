@@ -9,10 +9,9 @@ async function main() {
         logger: false,
     });
 
-    const logger = app.get(Logger);
-    app.useLogger(logger);
-
-    logger.log('Starting application');
+    // get logger
+    const logger = app.get<OgmaService>(OgmaService);
+    app.useLogger(console);
 
     const client = app.get(ClientService);
     client.start();

@@ -13,7 +13,7 @@ export class ClientService extends SapphireClient {
         private readonly configService: ConfigService,
         @OgmaLogger(ClientService) public readonly consoleLogger: OgmaService
     ) {
-        super(configService.get('client.options'));
+        super(configService.get('client'));
 
         Store.defaultStrategy.onLoad = (s, p) =>
             this.consoleLogger.log(
@@ -26,7 +26,7 @@ export class ClientService extends SapphireClient {
     public is_dev = this.configService.get('environment.dev');
 
     public async start() {
-        const res = await this.login(process.env.AUTHORIZATION);
+        const res = await this.login(this.configService.get('client.token'));
 
         this.consoleLogger.log('Client initialized');
         return res;

@@ -16,8 +16,10 @@ export const config: ISierraConfig = {
     },
 
     client: {
-        intents,
+        intents: ['DIRECT_MESSAGES'],
         shards: 'auto',
+        token: process.env.DISCORD_TOKEN,
+
         defaultPrefix: is_devenv ? ';' : '.',
 
         baseUserDirectory: '',
