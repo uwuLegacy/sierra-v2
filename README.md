@@ -1,3 +1,3 @@
 # Sierra
 
-Discord bot framework based on NestJS and SapphireJS.
+Discord bot framework/template based on NestJS and SapphireJS.

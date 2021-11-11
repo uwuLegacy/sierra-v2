@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { OgmaModule } from '@ogma/nestjs-module';
 import config from '@sierra/config';
 import { OgmaModuleConfig } from '../common/ogma/ogma-config.service';
-import { ClientModule, ClientService } from './client';
+import { ClientModule } from '@sierra/client';
+import { PrismaModule } from '@sierra/prisma';
 
 @Module({
     imports: [
@@ -15,6 +15,11 @@ import { ClientModule, ClientService } from './client';
         OgmaModule.forRootAsync({
             useClass: OgmaModuleConfig,
             imports: [ConfigModule],
+        }),
+        PrismaModule.forRoot({
+            prismaServiceOptions: {
+                prismaOptions: { log: ['info', 'query'] },
+            },
         }),
         ClientModule,
     ],

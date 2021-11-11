@@ -1,6 +1,52 @@
 {
     "version": 2,
     "projects": {
+        "client": {
+            "root": "libs/client",
+            "sourceRoot": "libs/client/src",
+            "projectType": "library",
+            "targets": {
+                "lint": {
+                    "executor": "@nrwl/linter:eslint",
+                    "outputs": ["{options.outputFile}"],
+                    "options": {
+                        "lintFilePatterns": ["libs/client/**/*.ts"]
+                    }
+                },
+                "test": {
+                    "executor": "@nrwl/jest:jest",
+                    "outputs": ["coverage/libs/client"],
+                    "options": {
+                        "jestConfig": "libs/client/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                }
+            },
+            "tags": []
+        },
+        "client2": {
+            "root": "libs/client2",
+            "sourceRoot": "libs/client2/src",
+            "projectType": "library",
+            "targets": {
+                "lint": {
+                    "executor": "@nrwl/linter:eslint",
+                    "outputs": ["{options.outputFile}"],
+                    "options": {
+                        "lintFilePatterns": ["libs/client2/**/*.ts"]
+                    }
+                },
+                "test": {
+                    "executor": "@nrwl/jest:jest",
+                    "outputs": ["coverage/libs/client2"],
+                    "options": {
+                        "jestConfig": "libs/client2/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                }
+            },
+            "tags": []
+        },
         "config": "libs/config",
         "framework": "apps/framework",
         "prisma": {
@@ -20,6 +66,29 @@
                     "outputs": ["coverage/libs/prisma"],
                     "options": {
                         "jestConfig": "libs/prisma/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                }
+            },
+            "tags": []
+        },
+        "structures": {
+            "root": "libs/structures",
+            "sourceRoot": "libs/structures/src",
+            "projectType": "library",
+            "targets": {
+                "lint": {
+                    "executor": "@nrwl/linter:eslint",
+                    "outputs": ["{options.outputFile}"],
+                    "options": {
+                        "lintFilePatterns": ["libs/structures/**/*.ts"]
+                    }
+                },
+                "test": {
+                    "executor": "@nrwl/jest:jest",
+                    "outputs": ["coverage/libs/structures"],
+                    "options": {
+                        "jestConfig": "libs/structures/jest.config.js",
                         "passWithNoTests": true
                     }
                 }
