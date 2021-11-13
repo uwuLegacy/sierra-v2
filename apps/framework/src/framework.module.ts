@@ -1,10 +1,8 @@
 import { Module } from '@nestjs/common';
-import { FrameworkController } from './framework.controller';
-import { FrameworkService } from './framework.service';
+import { ClientModule, ClientService } from '@sierra/client';
 
 @Module({
-  imports: [],
-  controllers: [FrameworkController],
-  providers: [FrameworkService],
+    imports: [ClientModule],
+    providers: [ClientService],
 })
 export class FrameworkModule {}

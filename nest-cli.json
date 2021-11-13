@@ -1,22 +1,12 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/wtf/src",
+  "sourceRoot": "apps/framework/src",
   "monorepo": true,
-  "root": "apps/wtf",
+  "root": "apps/framework",
   "compilerOptions": {
-    "webpack": true,
-    "tsConfigPath": "apps/wtf/tsconfig.app.json"
+    "tsConfigPath": "apps/framework/tsconfig.app.json"
   },
   "projects": {
-    "wtf": {
-      "type": "application",
-      "root": "apps/wtf",
-      "entryFile": "main",
-      "sourceRoot": "apps/wtf/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/wtf/tsconfig.app.json"
-      }
-    },
     "framework": {
       "type": "application",
       "root": "apps/framework",
