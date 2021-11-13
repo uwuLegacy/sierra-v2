@@ -1,0 +1,57 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/wtf/src",
+  "monorepo": true,
+  "root": "apps/wtf",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/wtf/tsconfig.app.json"
+  },
+  "projects": {
+    "wtf": {
+      "type": "application",
+      "root": "apps/wtf",
+      "entryFile": "main",
+      "sourceRoot": "apps/wtf/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/wtf/tsconfig.app.json"
+      }
+    },
+    "framework": {
+      "type": "application",
+      "root": "apps/framework",
+      "entryFile": "main",
+      "sourceRoot": "apps/framework/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/framework/tsconfig.app.json"
+      }
+    },
+    "client": {
+      "type": "library",
+      "root": "libs/client",
+      "entryFile": "index",
+      "sourceRoot": "libs/client/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/client/tsconfig.lib.json"
+      }
+    },
+    "config": {
+      "type": "library",
+      "root": "libs/config",
+      "entryFile": "index",
+      "sourceRoot": "libs/config/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/config/tsconfig.lib.json"
+      }
+    },
+    "structures": {
+      "type": "library",
+      "root": "libs/structures",
+      "entryFile": "index",
+      "sourceRoot": "libs/structures/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/structures/tsconfig.lib.json"
+      }
+    }
+  }
+}
