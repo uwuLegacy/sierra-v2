@@ -1,2 +1,4 @@
-export * from './config.module';
-export * from './config.service';
+export * from './lib';
+
+import config from './lib/config';
+export default config;

@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PermissionLevel {
+  DEVELOPER
+  ADMINISTRATOR
+  USER
+}
+
+model User {
+  /// Unique ID for tracking users
+  id          String          @id @default(cuid())
+  // User display name, defaults to their Discord username
+  name        String
+  // User's Discord ID
+  discordId   String          @unique
+  /// Global permission level
+  permissions PermissionLevel @default(USER)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  wallet Int @default(0)
+  bank   Int @default(0)
+}
+
+model Guild {
+  discordId String @id
+}

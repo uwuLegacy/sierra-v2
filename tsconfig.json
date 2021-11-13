@@ -35,6 +35,12 @@
       ],
       "@sierra/structures/*": [
         "libs/structures/src/*"
+      ],
+      "@sierra/prisma": [
+        "libs/prisma/src"
+      ],
+      "@sierra/prisma/*": [
+        "libs/prisma/src/*"
       ]
     }
   }

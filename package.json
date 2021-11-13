@@ -18,21 +18,31 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./apps/wtf/test/jest-e2e.json"
+    "test:e2e": "jest --config ./apps/wtf/test/jest-e2e.json",
+    "migrate:dev": "npx prisma migrate dev",
+    "migrate:dev:create": "npx prisma migrate dev --create-only",
+    "migrate:deploy": "npx prisma migrate deploy",
+    "prisma:generate": "npx prisma generate",
+    "prisma:studio": "npx prisma studio",
+    "prisma:seed": "npx prisma db seed --preview-feature"
   },
   "dependencies": {
     "@golevelup/nestjs-modules": "^0.4.3",
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.1.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@nice-labs/git-rev": "^3.5.0",
     "@ogma/common": "^1.0.0",
     "@ogma/nestjs-module": "^3.1.0",
+    "@prisma/client": "latest",
     "@sapphire/decorators": "^3.1.4",
     "@sapphire/discord.js-utilities": "^4.1.1",
     "@sapphire/framework": "^2.1.4",
     "@sapphire/pieces": "^3.1.1",
     "@sapphire/utilities": "^3.0.7",
     "discord.js": "^13.3.1",
+    "nestjs-prisma": "^0.14.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
@@ -52,6 +62,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.2.5",
     "prettier": "^2.3.2",
+    "prisma": "latest",
     "source-map-support": "^0.5.20",
     "supertest": "^6.1.3",
     "ts-jest": "^27.0.3",
@@ -83,7 +94,11 @@
     "moduleNameMapper": {
       "^@sierra/client(|/.*)$": "<rootDir>/libs/client/src/$1",
       "^@sierra/config(|/.*)$": "<rootDir>/libs/config/src/$1",
-      "^@sierra/structures(|/.*)$": "<rootDir>/libs/structures/src/$1"
+      "^@sierra/structures(|/.*)$": "<rootDir>/libs/structures/src/$1",
+      "^@sierra/prisma(|/.*)$": "<rootDir>/libs/prisma/src/$1"
     }
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
