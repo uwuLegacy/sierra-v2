@@ -41,6 +41,12 @@
       ],
       "@sierra/prisma/*": [
         "libs/prisma/src/*"
+      ],
+      "@sierra/modules": [
+        "libs/modules/src"
+      ],
+      "@sierra/modules/*": [
+        "libs/modules/src/*"
       ]
     }
   }

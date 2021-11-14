@@ -7,7 +7,9 @@ export const config: IConfig = {
 
     client: {
         intents: ['DIRECT_MESSAGES', 'GUILD_MESSAGES', 'GUILDS'],
-        token: process.env.DISCORD_TOKEN || '',
+        token: isDevenv
+            ? process.env.DISCORD_TOKEN_DEV
+            : process.env.DISCORD_TOKEN,
         shards: 'auto',
 
         baseUserDirectory: join(process.cwd(), 'modules'),

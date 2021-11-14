@@ -95,7 +95,8 @@
       "^@sierra/client(|/.*)$": "<rootDir>/libs/client/src/$1",
       "^@sierra/config(|/.*)$": "<rootDir>/libs/config/src/$1",
       "^@sierra/structures(|/.*)$": "<rootDir>/libs/structures/src/$1",
-      "^@sierra/prisma(|/.*)$": "<rootDir>/libs/prisma/src/$1"
+      "^@sierra/prisma(|/.*)$": "<rootDir>/libs/prisma/src/$1",
+      "^@sierra/modules(|/.*)$": "<rootDir>/libs/modules/src/$1"
     }
   },
   "prisma": {
