@@ -12,7 +12,7 @@ export const config: IConfig = {
             : process.env.DISCORD_TOKEN,
         shards: 'auto',
 
-        baseUserDirectory: join(process.cwd(), 'modules'),
+        baseUserDirectory: join(process.cwd(), 'dist/apps/framework/libs/modules/src'),
         caseInsensitiveCommands: true,
         caseInsensitivePrefixes: true,
 

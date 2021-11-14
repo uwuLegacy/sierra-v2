@@ -1,15 +1,15 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { OgmaLogger, OgmaService } from '@ogma/nestjs-module';
 import { SapphireClient, Store } from '@sapphire/framework';
 import { ClientOptions } from 'discord.js';
-import '@sapphire/pieces';
+import { container } from '@sapphire/pieces';
 
 @Injectable()
 export class ClientService extends SapphireClient {
     constructor(
         @OgmaLogger(ClientService)
-        private readonly consoleLogger: OgmaService,
+        public readonly consoleLogger: OgmaService,
         private readonly configService: ConfigService,
     ) {
         super(configService.get<ClientOptions>('client'));
@@ -17,6 +17,8 @@ export class ClientService extends SapphireClient {
         this.setupStoreEventHandlers();
 
         this.consoleLogger.info('ClientService instantiated');
+
+        container.clientService = this;
     }
 
     public async start(): Promise<void> {
@@ -49,5 +51,11 @@ export class ClientService extends SapphireClient {
                 logMeta,
             );
         };
+    }
+}
+
+declare module '@sapphire/pieces' {
+    interface Container {
+        clientService: ClientService;
     }
 }

@@ -3,6 +3,7 @@ import { OgmaService } from '@ogma/nestjs-module';
 import { ClientService } from '@sierra/client';
 import { PrismaService } from '@sierra/prisma';
 import { FrameworkModule } from './framework.module';
+import dn from '@sierra/modules';
 
 async function main() {
     const app = await NestFactory.createApplicationContext(FrameworkModule, {
@@ -17,6 +18,8 @@ async function main() {
 
     const client = app.get(ClientService);
     client.start();
+
+    dn();
 }
 
 main();

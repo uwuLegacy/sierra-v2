@@ -17,6 +17,8 @@ specifiers:
   '@sapphire/discord.js-utilities': ^4.1.1
   '@sapphire/framework': ^2.1.4
   '@sapphire/pieces': ^3.1.1
+  '@sapphire/plugin-editable-commands': ^1.0.2
+  '@sapphire/plugin-subcommands': ^2.0.2
   '@sapphire/utilities': ^3.0.7
   '@types/express': ^4.17.13
   '@types/jest': ^27.0.1
@@ -29,6 +31,7 @@ specifiers:
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
   jest: ^27.2.5
+  lexure: ^0.17.0
   nestjs-prisma: ^0.14.3
   prettier: ^2.3.2
   prisma: latest
@@ -57,8 +60,11 @@ dependencies:
   '@sapphire/discord.js-utilities': 4.1.1
   '@sapphire/framework': 2.1.4
   '@sapphire/pieces': 3.1.1
+  '@sapphire/plugin-editable-commands': 1.0.2
+  '@sapphire/plugin-subcommands': 2.0.2
   '@sapphire/utilities': 3.0.7
   discord.js: 13.3.1
+  lexure: 0.17.0
   nestjs-prisma: 0.14.3_e11a62e9c4d3fee1da546cd2ce7376db
   reflect-metadata: 0.1.13
   rimraf: 3.0.2
@@ -1091,6 +1097,21 @@ packages:
       tslib: 2.3.1
     dev: false
 
+  /@sapphire/plugin-editable-commands/1.0.2:
+    resolution: {integrity: sha512-LalSS9s/wU2hCH4meBDQYwXOzTXhmupG1Wzi5KxYCm7aYQOAcjCy0TRPViKz9ENcUX0vwquqcWWdOjSKDpytrw==}
+    engines: {node: '>=16.6.0', npm: '>=7.0.0'}
+    dependencies:
+      '@skyra/editable-commands': 2.1.0
+      tslib: 2.3.1
+    dev: false
+
+  /@sapphire/plugin-subcommands/2.0.2:
+    resolution: {integrity: sha512-iM7mqJXXR5G+5JbQNU6jM+QVj9lScpsXucOvjQBuI271DHknAQ5uHhr8Yb2YOolhvIKm202EnVOvwQlM+PMHSA==}
+    engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
+    dependencies:
+      tslib: 2.3.1
+    dev: false
+
   /@sapphire/ratelimits/2.1.7:
     resolution: {integrity: sha512-jJQt3I7JRbO5SuYwMhNLFIJ/nU+bm+3cVoCiAx9HndJYIC8yWxRaXTd7xTQJ5mkCPMyosDx2eqzTLLUz7Ed1QQ==}
     engines: {node: '>=v14.0.0', npm: '>=7.0.0'}
@@ -1135,6 +1156,11 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.3
     dev: true
+
+  /@skyra/editable-commands/2.1.0:
+    resolution: {integrity: sha512-J2ok13AxditPel4pUknKFpLQDW7hF6Dchc8JnetGKlOJrHqy+j4/UJ+Qf46KgX/zsPcRB4Q5ydZIHAq4XNtK8g==}
+    engines: {node: '>=16.6', npm: '>=7'}
+    dev: false
 
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
