@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@sierra/client": [
+        "libs/client/src"
+      ],
+      "@sierra/client/*": [
+        "libs/client/src/*"
+      ],
+      "@sierra/config": [
+        "libs/config/src"
+      ],
+      "@sierra/config/*": [
+        "libs/config/src/*"
+      ],
+      "@sierra/structures": [
+        "libs/structures/src"
+      ],
+      "@sierra/structures/*": [
+        "libs/structures/src/*"
+      ],
+      "@sierra/prisma": [
+        "libs/prisma/src"
+      ],
+      "@sierra/prisma/*": [
+        "libs/prisma/src/*"
+      ],
+      "@sierra/modules": [
+        "libs/modules/src"
+      ],
+      "@sierra/modules/*": [
+        "libs/modules/src/*"
+      ]
+    }
+  }
+}

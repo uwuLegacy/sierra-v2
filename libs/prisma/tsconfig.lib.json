@@ -1,12 +1,9 @@
 {
-    "extends": "./tsconfig.json",
-    "compilerOptions": {
-        "module": "commonjs",
-        "outDir": "../../dist/out-tsc",
-        "declaration": true,
-        "types": ["node"],
-        "target": "es6"
-    },
-    "exclude": ["**/*.spec.ts"],
-    "include": ["**/*.ts"]
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "../../dist/libs/prisma"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }
