@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { OgmaLogger, OgmaService } from '@ogma/nestjs-module';
 import { SapphireClient, Store } from '@sapphire/framework';
@@ -6,9 +6,9 @@ import { ClientOptions } from 'discord.js';
 import '@sapphire/pieces';
 
 @Injectable()
-export class ClientService extends SapphireClient<true> {
+export class ClientService extends SapphireClient {
     constructor(
-        @OgmaLogger('ClientService')
+        @OgmaLogger(ClientService)
         private readonly consoleLogger: OgmaService,
         private readonly configService: ConfigService,
     ) {

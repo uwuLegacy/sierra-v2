@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { OgmaModule, OgmaService } from '@ogma/nestjs-module';
 import { ClientModule, ClientService } from '@sierra/client';
-import config from '@sierra/config';
+import config, { OgmaModuleConfig } from '@sierra/config';
 import { PrismaModule } from '@sierra/prisma';
 
 @Module({
@@ -9,9 +10,13 @@ import { PrismaModule } from '@sierra/prisma';
         ConfigModule.forRoot({
             load: [config],
         }),
+        OgmaModule.forRootAsync({
+            useClass: OgmaModuleConfig,
+            imports: [ConfigModule],
+        }),
         PrismaModule,
         ClientModule,
     ],
-    providers: [ClientService],
+    providers: [],
 })
 export class FrameworkModule {}

@@ -1,8 +1,27 @@
+import { join } from 'path';
 import { IConfig } from './config.interface';
+import { isDevenv, version } from './vars';
 
 export const config: IConfig = {
-    client: undefined,
-    environment: undefined,
+    application: 'Sierra',
+
+    client: {
+        intents: ['DIRECT_MESSAGES', 'GUILD_MESSAGES', 'GUILDS'],
+        token: process.env.DISCORD_TOKEN || '',
+        shards: 'auto',
+
+        baseUserDirectory: join(process.cwd(), 'modules'),
+        caseInsensitiveCommands: true,
+        caseInsensitivePrefixes: true,
+
+        defaultPrefix: isDevenv ? ';' : '.',
+    },
+
+    environment: {
+        production: isDevenv,
+        version: version,
+        logLevel: isDevenv ? 'DEBUG' : 'INFO',
+    },
 };
 
 export default () => config;
