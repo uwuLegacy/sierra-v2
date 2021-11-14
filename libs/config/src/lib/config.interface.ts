@@ -1,20 +1,20 @@
 import { LogLevel } from '@ogma/common';
 import { ClientOptions } from 'discord.js';
-import '@sapphire/framework';
 
-export interface IClientConfig extends ClientOptions {
+export interface ClientConfig extends ClientOptions {
     token: string;
 }
 
-export interface IEnvironmentConfig {
-    production: boolean;
+export interface EnvironmentConfig {
+    dev: boolean;
     version: string;
     logLevel: keyof typeof LogLevel;
 }
 
-export interface IConfig {
+export interface ISierraConfig {
     application: string;
+    owners: string[];
 
-    client: IClientConfig;
-    environment: IEnvironmentConfig;
+    environment: EnvironmentConfig;
+    client: ClientConfig;
 }

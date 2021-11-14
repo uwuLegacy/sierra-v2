@@ -10,29 +10,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum PermissionLevel {
-  DEVELOPER
-  ADMINISTRATOR
-  USER
-}
-
 model User {
-  /// Unique ID for tracking users
-  id          String          @id @default(cuid())
-  // User display name, defaults to their Discord username
-  name        String
-  // User's Discord ID
-  discordId   String          @unique
-  /// Global permission level
-  permissions PermissionLevel @default(USER)
+  id   String @id @default(cuid())
+  name String
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  discord_id Int @unique
 
   wallet Int @default(0)
   bank   Int @default(0)
+
+  inventory Item[]
 }
 
-model Guild {
-  discordId String @id
+model Item {
+  id           String @unique
+  display_name String
+  price        Int
+  description  String
+
+  owner   User?   @relation(fields: [ownerId], references: [id])
+  ownerId String?
 }

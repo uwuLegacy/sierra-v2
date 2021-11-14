@@ -1,29 +1,41 @@
-import { join } from 'path';
-import { IConfig } from './config.interface';
-import { isDevenv, version } from './vars';
+import { ISierraConfig } from './config.interface';
+import { is_devenv, version, intents } from './vars';
 
-export const config: IConfig = {
+// Side-effects import to override ClientOptions with the Sapphire definition which extends SapphireClientOptions.
+import '@sapphire/framework';
+
+export const config: ISierraConfig = {
     application: 'Sierra',
 
-    client: {
-        intents: ['DIRECT_MESSAGES', 'GUILD_MESSAGES', 'GUILDS'],
-        token: isDevenv
-            ? process.env.DISCORD_TOKEN_DEV
-            : process.env.DISCORD_TOKEN,
-        shards: 'auto',
+    owners: ['392264789360902156'],
 
-        baseUserDirectory: join(process.cwd(), 'dist/apps/framework/libs/modules/src'),
+    environment: {
+        dev: is_devenv,
+        version,
+        logLevel: is_devenv ? 'INFO' : 'DEBUG',
+    },
+
+    client: {
+        intents: ['DIRECT_MESSAGES'],
+        shards: 'auto',
+        token: process.env.DISCORD_TOKEN,
+
+        defaultPrefix: is_devenv ? ';' : '.',
+
+        baseUserDirectory: '',
         caseInsensitiveCommands: true,
         caseInsensitivePrefixes: true,
 
-        defaultPrefix: isDevenv ? ';' : '.',
-    },
-
-    environment: {
-        production: isDevenv,
-        version: version,
-        logLevel: isDevenv ? 'DEBUG' : 'INFO',
+        presence: {
+            status: 'online',
+            activities: [
+                {
+                    type: 'LISTENING',
+                    name: `Sierra v${version}`,
+                },
+            ],
+        },
     },
 };
 
-export default () => config;
+export default (): ISierraConfig => config;
